@@ -94,13 +94,13 @@ export default class DirectMessaging {
     ]);
 
     switch ((input as string).toLowerCase()) {
-      case '\\l': return this.init();
+      case '\:l': return this.init();
       case '':
-      case '\\r':
+      case '\:r':
         this.threads = await this.getInbox();
         return this.goToThread(thread.thread_id);
-      case '\\q': process.exit();
-      case '\\logout': return new Authenticator().logout();
+      case '\:q': process.exit();
+      case '\:logout': return new Authenticator().logout();
     }
 
     // eslint-disable-next-line @typescript-eslint/naming-convention
