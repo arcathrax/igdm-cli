@@ -11,7 +11,7 @@ const authenticator = new Authenticator;
 authenticator.login()
   .then(async client => {
     const currentUser = await client.account.currentUser();
-    console.log(`✅  Logged in as: ${chalk.bold.green(currentUser.username)}`);
+    console.log(`Logged in as: ${chalk.bold.green(currentUser.username)}`);
 
     const dm = new DirectMessaging(client);
     dm.init();
